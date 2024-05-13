@@ -1,0 +1,14 @@
+version 18.0
+class testcase {
+    string id    // test case identifier
+    string name  // test case name
+    double total // expected number of assertions
+    double pass  // number of assertions that passed
+    double fail  // number of assertions that failed
+}
+program .new
+    syntax, id(string) name(string) total(integer) 
+    .id = "`id'"
+    .name = "`name'"
+    .total = `total'
+end

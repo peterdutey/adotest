@@ -1,0 +1,6 @@
+.thistest = .testcase.new, ///
+  id("0008") ///
+  name(".testcase class instances are created and can be updated") ///
+  total(1)
+
+

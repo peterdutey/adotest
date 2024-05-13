@@ -1,0 +1,10 @@
+* Missing testcase instantiation here! This is intended to trigger an error
+
+capture test_assert 1+1 == 2 
+
+if _rc != 0 then
+    echo "Test failed as expected"
+else
+    echo "Test passed, but should have failed"
+    exit 1
+end
