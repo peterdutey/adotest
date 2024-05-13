@@ -1,9 +1,7 @@
----
 name: Software
 description: "Software component"
 title: "[SW] "
-labels: 'software'
-assignees: ''
+labels: ["software-component"]
 body:
   - type: dropdown
     id: risk-class
@@ -23,4 +21,3 @@ body:
       label: Tested by
       description: Enter the Test Case GitHub issue numbers which validate this software component
       placeholder: "#1"
----
