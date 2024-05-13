@@ -23,5 +23,5 @@ body:
     id: tested-by
     attributes:
       label: Tested by
-      description: Enter the Test Case GitHub issue numbers which validate this software component
+      description: Enter the Test Case GitHub issue numbers which validate this requirement
       placeholder: "#1"
