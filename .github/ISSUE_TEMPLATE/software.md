@@ -1,6 +1,5 @@
 name: Software
 description: "Software component"
-title: "[SW] "
 labels: ["software-component"]
 body:
   - type: dropdown
