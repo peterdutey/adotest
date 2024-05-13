@@ -4,9 +4,7 @@ description: "Software component"
 title: "[SW] "
 labels: 'software'
 assignees: ''
----
-
-body
+body:
   - type: dropdown
     id: risk-class
     attributes:
@@ -25,3 +23,4 @@ body
       label: Tested by
       description: Enter the Test Case GitHub issue numbers which validate this software component
       placeholder: "#1"
+---
