@@ -3,5 +3,6 @@ description: "Test case"
 labels: ["test-case"]
 title: "[TC] "
 body:
-  - textarea
-    label: Test case specification
+  - type: textarea
+    attributes:
+      label: Test case specification
