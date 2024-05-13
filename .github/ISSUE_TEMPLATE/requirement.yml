@@ -20,6 +20,12 @@ body:
     attributes:
       label: Specification
   - type: textarea
+    id: implemented-by
+    attributes:
+      label: Implemented by
+      description: Enter the Software Component GitHub issue numbers which implements this requirement
+      placeholder: "#1"
+  - type: textarea
     id: tested-by
     attributes:
       label: Tested by
