@@ -1,3 +1,5 @@
 name: Test case
 description: "Test case"
 labels: ["test-case"]
+title: "[TC] "
+body:
