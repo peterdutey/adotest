@@ -8,14 +8,14 @@ syntax anything [, message(string)]
 	}
 	capture assert `anything'
 	if _rc == 0 {
-		display as input "> PASS: `message'"
-		.thistest.pass = `.thistest.pass' + 1
+		display as input "> PASS > `message'" _newline
+		.thistest.pass
 	}
 	else {
-		.thistest.fail = `.thistest.fail' + 1
-		display as error "> FAIL: `message'" _newline			
+		.thistest.fail
+		display as error "> FAIL > `message'" _newline			
 		display as error _col(3) "-- ERROR MESSAGE " _dup(48) "-"
-		display as error _col(3) "Assertion returned false: `test_statement'"
+		display as error _col(3) "This assertion is false: `anything'"
 		display as error _col(3) _dup(65) "-" _newline
 	}
 end

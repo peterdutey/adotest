@@ -1,14 +1,34 @@
 version 18.0
+
 class testcase {
-    string id    // test case identifier
-    string name  // test case name
-    double total // expected number of assertions
-    double pass  // number of assertions that passed
-    double fail  // number of assertions that failed
+    string id           // test case identifier
+    string name         // test case name
+    string filename     // test file name
+    double total        // expected number of assertions
+    double passed       // number of assertions that passed
+    double failed       // number of assertions that failed
+    string start_dttm   // timestamp of when testing started 
+    string end_dttm     // timestamp of when testing stopped 
 }
+
 program .new
     syntax, id(string) name(string) total(integer) 
     .id = "`id'"
     .name = "`name'"
     .total = `total'
+    .passed = 0
+    .failed = 0
+    .start_dttm = strofreal(now(), "%tcCCYY-MM-DD_HH:MM:SS")
+end
+
+program .pass
+    .passed = `.passed' + 1
+end
+
+program .fail
+    .failed = `.failed' + 1
+end
+
+program .end
+    .end_dttm = strofreal(now(), "%tcCCYY-MM-DD_HH:MM:SS")
 end
