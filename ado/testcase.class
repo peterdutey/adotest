@@ -1,6 +1,8 @@
 version 18.0
 
+* Class definition
 class testcase {
+    string timeformatter = "%tcCCYY-MM-DD_HH:MM:SS"
     string id           // test case identifier
     string name         // test case name
     string filename     // test file name
@@ -11,6 +13,7 @@ class testcase {
     string end_dttm     // timestamp of when testing stopped 
 }
 
+* Constructor
 program .new
     syntax, id(string) name(string) total(integer) 
     .id = "`id'"
@@ -18,17 +21,20 @@ program .new
     .total = `total'
     .passed = 0
     .failed = 0
-    .start_dttm = strofreal(now(), "%tcCCYY-MM-DD_HH:MM:SS")
+    .start_dttm = strofreal(now(), .timeformatter)
 end
 
+* Method to increment pass counter
 program .pass
     .passed = `.passed' + 1
 end
 
+* Method to increment fail counter
 program .fail
     .failed = `.failed' + 1
 end
 
+* Method to record the time the test finished
 program .end
-    .end_dttm = strofreal(now(), "%tcCCYY-MM-DD_HH:MM:SS")
+    .end_dttm = strofreal(now(), .timeformatter)
 end
