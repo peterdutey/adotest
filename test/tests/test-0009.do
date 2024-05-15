@@ -1,5 +1,4 @@
-quietly {
-.actualtest = .testcase.new, ///
+noisily .actualtest = .testcase.new, ///
   id("9") ///
   name("Check test_assert function") ///
   total(3) 
@@ -46,16 +45,6 @@ else {
 
 **# Step  TODO check the print test_assert 1+1 == 4, message("1+1=4") when the hash function is developed
 
-}
 .thistest = .actualtest
 classutil drop .actualtest
 classutil dir
-
-
-
-
-
-
-
-
-

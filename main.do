@@ -1,3 +1,4 @@
 adopath + "./ado"
 
-test_package, TESTFiledirectory("test")
+clear all
+test_package, test("test/tests") out(".")

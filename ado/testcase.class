@@ -21,7 +21,10 @@ program .new
     .total = `total'
     .passed = 0
     .failed = 0
-    .start_dttm = strofreal(now(), .timeformatter)
+    .start_dttm = strofreal(now(), "`.timeformatter'")
+    if c(noisily) {
+        display as input "TEST CASE `id': `name'" _newline
+    }
 end
 
 * Method to increment pass counter
@@ -36,5 +39,5 @@ end
 
 * Method to record the time the test finished
 program .end
-    .end_dttm = strofreal(now(), .timeformatter)
+    .end_dttm = strofreal(now(), "`.timeformatter'")
 end
