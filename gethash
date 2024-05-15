@@ -1,0 +1,19 @@
+$hash1 = Get-FileHash -Algorithm SHA256 "file1.txt"
+
+set obs 1
+gen y = fileread("log1.log")
+gen x = fileread("log1.log")
+hash y, gen(hashy) kind(sha1)
+
+
+program define gethash
+syntax using
+  
+  if (lower(c(os)) != "windows") {
+		display as error ///
+			_n "This function only supports Windows"
+		exit 111
+	}
+	
+
+end
