@@ -3,15 +3,14 @@ version 18
 syntax, ///
   TESTdir(string)       ///
   [ OUTputdir(string) ] /// path where to store 
-  [ stopiferror ]       // option to trigger error if any test fails
 
 	// Create a class to hold the test results
 	.tcresults = .testsuite.new
 
-	local dttm = strofreal(now(), "%tcCCYYMMDDHHMM")
+	local dttm = strofreal(now(), "%tcCCYYMMDDHHMMSS")
 
 	if "`outputdir'" != "" {
-		quietly log using "`outputdir'/test_report_`dttm'.log", text
+		quietly log using "`outputdir'/test_report_`dttm'.log", text name(test_package_log)
 	}
 
 	local tfiles: dir "`testdir'" files "test-*.do", respectcase
@@ -58,15 +57,15 @@ syntax, ///
 
 	quietly replace total = passed + failed
 
-	list  *, clean noobs
-
-	if "`stopiferror'" != "" & failed > 0 {
-		display as error "One or more tests failed. See test_report.log for details."
+	if failed > 0 {
+		display as error "One or more tests failed."
 	}
+
+	list *, clean noobs
 	
 	if "`outputdir'" != "" {
 		export delimited using "`outputdir'/test_report_`dttm'.csv", quote
-		quietly log close
+		quietly log close test_package_log
 	}	
 
 	clear all
