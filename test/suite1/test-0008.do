@@ -1,8 +1,6 @@
-quietly {
-.thistest = .testcase.new, ///
-  id("0008") ///
-  name(".testcase class instances are created and can be updated") ///
-  total(1)
+noisily .thistest = .testcase.new, ///
+  id("8") ///
+  name(".testcase class instances are created and can be updated")
 
 test_assert `.thistest.passed' == 0, message("Pass counter starts at zero.")
 test_assert `.thistest.passed' == 1, message("Pass counter successfully hiked to 1.")
@@ -20,5 +18,3 @@ test_assert `.thistest.failed' == 0, message("Fail counter reset to 0 to pass th
 test_assert `.thistest.isofclass testcase' == 1, message("Object exists and is of class .testcase")
 
 test_assert regexm("`.thistest.start_dttm'", "^2[0-9]{3}-[0-9]{2}-[0-9]{2} [0-2][0-9]:[0-5][0-9]:[0-5][0-9]"), message("Has a start time")
-
-}

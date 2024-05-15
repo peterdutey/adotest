@@ -6,7 +6,6 @@ class testcase {
     string id           // test case identifier
     string name         // test case name
     string filename     // test file name
-    double total        // expected number of assertions
     double passed       // number of assertions that passed
     double failed       // number of assertions that failed
     string start_dttm   // timestamp of when testing started 
@@ -15,13 +14,15 @@ class testcase {
 
 * Constructor
 program .new
-    syntax, id(string) name(string) total(integer) 
+    syntax, id(string) name(string)
     .id = "`id'"
     .name = "`name'"
-    .total = `total'
     .passed = 0
     .failed = 0
-    .start_dttm = strofreal(now(), .timeformatter)
+    .start_dttm = strofreal(now(), "`.timeformatter'")
+    if c(noisily) {
+        display as input "TEST CASE `id': `name'" _newline
+    }
 end
 
 * Method to increment pass counter
@@ -36,5 +37,5 @@ end
 
 * Method to record the time the test finished
 program .end
-    .end_dttm = strofreal(now(), .timeformatter)
+    .end_dttm = strofreal(now(), "`.timeformatter'")
 end
