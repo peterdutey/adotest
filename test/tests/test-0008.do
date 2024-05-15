@@ -1,7 +1,6 @@
 noisily .thistest = .testcase.new, ///
   id("8") ///
-  name(".testcase class instances are created and can be updated") ///
-  total(1)
+  name(".testcase class instances are created and can be updated")
 
 test_assert `.thistest.passed' == 0, message("Pass counter starts at zero.")
 test_assert `.thistest.passed' == 1, message("Pass counter successfully hiked to 1.")

@@ -6,7 +6,6 @@ class testcase {
     string id           // test case identifier
     string name         // test case name
     string filename     // test file name
-    double total        // expected number of assertions
     double passed       // number of assertions that passed
     double failed       // number of assertions that failed
     string start_dttm   // timestamp of when testing started 
@@ -15,10 +14,9 @@ class testcase {
 
 * Constructor
 program .new
-    syntax, id(string) name(string) total(integer) 
+    syntax, id(string) name(string)
     .id = "`id'"
     .name = "`name'"
-    .total = `total'
     .passed = 0
     .failed = 0
     .start_dttm = strofreal(now(), "`.timeformatter'")

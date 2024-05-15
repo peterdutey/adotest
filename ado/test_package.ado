@@ -2,14 +2,16 @@ program define test_package
 version 18
 syntax, ///
   TESTdir(string)       ///
-  [ OUTputdir(string) ] ///
+  [ OUTputdir(string) ] /// path where to store 
   [ stopiferror ]       // option to trigger error if any test fails
 
 	// Create a class to hold the test results
 	.tcresults = .testsuite.new
 
-	if "`outputdir'" == "" {
-		log using "`outputdir'/test_report.log", replace
+	local dttm = strofreal(now(), "%tcCCYYMMDDHHMM")
+
+	if "`outputdir'" != "" {
+		quietly log using "`outputdir'/test_report_`dttm'.log", text
 	}
 
 	local tfiles: dir "`testdir'" files "test-*.do", respectcase
@@ -21,6 +23,14 @@ syntax, ///
 		local i = `i' + 1
 		display as input "FILE: `tf'    " 
 		run "`testdir'/`tf'"
+		.thistest.end
+		clear
+		clear mata 
+		clear results
+		clear matrix
+		clear rngstream
+		clear frames
+		clear collect
 		.tcresults.testcases[`i'] = .thistest
 		classutil drop .thistest
 	display as input _dup(80) "="
@@ -28,12 +38,36 @@ syntax, ///
 
 	display as input _newline "Testing complete."
 
-	if "`outputdir'" == "" {
-		log close
+	gen test_id = ""
+	gen test_name = ""
+	gen passed = 0
+	gen failed = 0
+	gen total = 0
+	gen start_dttm = ""
+    gen end_dttm = ""
+
+	quietly : foreach j of numlist 1/`i' {
+		insobs 1
+		replace test_id = "`.tcresults.testcases[`j'].id'" if _n == _N
+		replace test_name = "`.tcresults.testcases[`j'].name'" if _n == _N
+		replace passed = `.tcresults.testcases[`j'].passed' if _n == _N
+		replace failed = `.tcresults.testcases[`j'].failed' if _n == _N
+		replace start_dttm = "`.tcresults.testcases[`j'].start_dttm'" if _n == _N
+		replace end_dttm = "`.tcresults.testcases[`j'].end_dttm'" if _n == _N
 	}
 
-	classutil d .tcresults
-	if "`stopiferror'" != "" {
-		* check if any failed and throw error exit xxxx
+	quietly replace total = passed + failed
+
+	list  *, clean noobs
+
+	if "`stopiferror'" != "" & failed > 0 {
+		display as error "One or more tests failed. See test_report.log for details."
 	}
+	
+	if "`outputdir'" != "" {
+		export delimited using "`outputdir'/test_report_`dttm'.csv", quote
+		quietly log close
+	}	
+
+	clear all
 end
