@@ -1,3 +1,4 @@
+*! version 0.1.0 2021-05-15
 program define test_assert
 version 18
 syntax anything [, message(string)] 
