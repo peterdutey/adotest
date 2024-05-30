@@ -14,8 +14,6 @@ TEST CASE 14: Test reporting of failure by test_package
 Testing complete.
 One or more tests failed.
 
-    test_id                                   test_name   passed   failed   total          
->   start_dttm              end_dttm  
-         14   Test reporting of failure by test_package        1        1       2   2024-05
-> -30 11:13:23   2024-05-30 11:13:23  
-file test/suite2_reports/test_report_20240530111323.csv saved
+    test_id                                   test_name   passed   failed   total            start_dttm              end_dttm  
+         14   Test reporting of failure by test_package        1        1       2   2024-05-30 20:55:52   2024-05-30 20:55:52  
+file test/suite2_reports/test_report_20240530205552.csv saved

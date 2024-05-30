@@ -1,13 +1,13 @@
-*! version 0.2.0 2024-05-30
+*! version 0.3.0 2024-05-30
 program define test_assert
 version 18
-syntax anything [, message(string)] 
+syntax anything [if] [in] [, message(string)] 
 	quietly classutil dir .thistest
 	if "`r(list)'" == "" {
 		noisily display as error "The object .thistest is not found. Please make sure it is created before running test_assert"
 		exit 111
 	}
-	capture assert `anything'
+	capture assert `anything' `if' `in'
 	if _rc == 0 {
 		noisily display as input "> PASS > `message'"
 		.thistest.pass
