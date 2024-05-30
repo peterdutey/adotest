@@ -1,0 +1,35 @@
+Beginning testing in test/suite2.
+
+================================================================================
+FILE: test-0014.do    
+TEST CASE 14: Test reporting of failure by test_package
+
+> PASS > 1+1 = 2
+> FAIL > 1+1 <> 3
+  -- ERROR MESSAGE ------------------------------------------------
+  This assertion is false: 1+1 == 3  
+  -----------------------------------------------------------------
+================================================================================
+FILE: test-0023.do    
+TEST CASE 23: test_assert supports 'if' and 'in' inputs
+
+> PASS > 1 and 2 both < 3
+> PASS > 1=1 with if
+> PASS > 1=1 with if
+> PASS > 1<>2 with if
+> FAIL > This test must fail due to a null condition
+  -- ERROR MESSAGE ------------------------------------------------
+  This assertion is false: 1 + 1 == 2 if 2 + 2 == 1 
+  -----------------------------------------------------------------
+> PASS > 1=1 with in
+> PASS > 1=1 with in
+> PASS > 1<>2 with in
+================================================================================
+
+Testing complete.
+One or more tests failed.
+
+    test_id                                   test_name   passed   failed   total            start_dttm              end_dttm  
+         14   Test reporting of failure by test_package        1        1       2   2024-05-30 21:14:02   2024-05-30 21:14:02  
+         23   test_assert supports 'if' and 'in' inputs        7        1       8   2024-05-30 21:14:02   2024-05-30 21:14:02  
+file test/suite2_reports/test_report_20240530211402.csv saved

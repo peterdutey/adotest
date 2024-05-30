@@ -1,4 +1,0 @@
-test_id,test_name,passed,failed,total,start_dttm,end_dttm
-"8",".testcase class instances are created and can be updated",9,0,9,"2024-05-30 20:55:52","2024-05-30 20:55:52"
-"9","Check test_assert function",2,0,2,"2024-05-30 20:55:52","2024-05-30 20:55:52"
-"23","test_assert supports 'if' and 'in' inputs",7,0,7,"2024-05-30 20:55:52","2024-05-30 20:55:52"

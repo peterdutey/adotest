@@ -20,26 +20,13 @@ TEST CASE 9: Check test_assert function
 > PASS > test_assert reported a pass as expected
 > PASS > test_assert reported a fail as expected
 ================================================================================
-FILE: test-0023.do    
-TEST CASE 23: test_assert supports 'if' and 'in' inputs
-
-> PASS > 1 and 2 both < 3
-> PASS > 1=1 with if
-> PASS > 1=1 with if
-> PASS > 1<>2 with if
-> PASS > 1=1 with in
-> PASS > 1=1 with in
-> PASS > 1<>2 with in
-================================================================================
 
 Testing complete.
 
     test_id                                                  test_name   passed   failed   total            start_dttm              end_d
 > ttm  
-          8   .testcase class instances are created and can be updated        9        0       9   2024-05-30 20:55:52   2024-05-30 20:55
-> :52  
-          9                                 Check test_assert function        2        0       2   2024-05-30 20:55:52   2024-05-30 20:55
-> :52  
-         23                  test_assert supports 'if' and 'in' inputs        7        0       7   2024-05-30 20:55:52   2024-05-30 20:55
-> :52  
-file test/suite1_reports/test_report_20240530205552.csv saved
+          8   .testcase class instances are created and can be updated        9        0       9   2024-05-30 21:14:02   2024-05-30 21:14
+> :02  
+          9                                 Check test_assert function        2        0       2   2024-05-30 21:14:02   2024-05-30 21:14
+> :02  
+file test/suite1_reports/test_report_20240530211402.csv saved
