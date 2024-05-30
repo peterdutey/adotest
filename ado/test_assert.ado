@@ -1,4 +1,4 @@
-*! version 0.1.0 2021-05-15
+*! version 0.2.0 2024-05-30
 program define test_assert
 version 18
 syntax anything [, message(string)] 
