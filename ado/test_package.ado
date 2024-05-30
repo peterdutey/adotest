@@ -1,4 +1,4 @@
-*! version 0.2.0 2024-05-30
+*! version 0.3.0 2024-05-30
 program define test_package
 version 18
 syntax, ///
