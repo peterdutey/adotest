@@ -1,0 +1,8 @@
+name: Test case
+description: "Test case"
+labels: ["test-case"]
+title: "[TC] "
+body:
+  - type: textarea
+    attributes:
+      label: Test case specification

@@ -3,7 +3,7 @@ version 18.0
 
 * Class definition
 class testcase {
-    string timeformatter = "%tcCCYY-MM-DD_HH:MM:SS"
+    string timeformatter = "%tcCCYY-NN-DD_HH:MM:SS"
     string id           // test case identifier
     string name         // test case name
     string filename     // test file name
