@@ -1,4 +1,4 @@
-*! version 0.1.0 2021-05-15
+*! version 0.3.0 2024-05-30
 program define test_package
 version 18
 syntax, ///
@@ -8,7 +8,7 @@ syntax, ///
 	// Create a class to hold the test results
 	.tcresults = .testsuite.new
 
-	local dttm = strofreal(now(), "%tcCCYYMMDDHHMMSS")
+	local dttm = strofreal(now(), "%tcCCYYNNDDHHMMSS")
 
 	if "`outputdir'" != "" {
 		quietly log using "`outputdir'/test_report_`dttm'.log", text name(test_package_log)
