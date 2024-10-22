@@ -4,7 +4,8 @@ noisily .thistest = .testcase.new, ///
 
 
 * Load subcommands
-do "ado/get_hash.ado"
+capture program drop get_hash
+run "ado/get_hash.ado"
 
 capture process_stderr using "test/suite1/TC0026/empty_file.txt"
 test_assert _rc == 0, message("process_stderr does not raise error in presence of empty file")
