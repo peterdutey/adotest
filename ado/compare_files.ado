@@ -1,4 +1,4 @@
-program compare_txt, rclass
+program compare_files, rclass
     version 17
     syntax, file1(string) file2(string)
 
