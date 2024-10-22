@@ -27,14 +27,12 @@ program define gethash, rclass
 
 	// Create temporary bat file and pass this to the shell
 	tempname batn
-	local batfilename = "batfile`batf'.bat"
-	di `"certutil -hashfile "`using'" SHA256 1> "`stdout'" 2> "`stderr'""'
-	
+	local batfilename = "batfile`batf'.bat"	
 	capture file close `batn' 
 	quietly file open `batn' using "`batfilename'", write text replace
-	file write `batn' `"certutil -hashfile "`using'" SHA256 1> "`stdout'" 2> "`stderr'""' _n
+	quietly file write `batn' `"certutil -hashfile "`using'" SHA256 1> "`stdout'" 2> "`stderr'""' _n
 	file close `batn'
-	shell "`batfilename'"
+	quietly shell "`batfilename'"
 	quietly erase "`batfilename'"
 	
 	process_stderr using `stderr'
@@ -68,6 +66,11 @@ program define process_stdout, rclass
 	tempname stdout_handle
 	file open `stdout_handle' `using', read text
 	file read `stdout_handle' stdout_content
+	if "`stdout_content'" == "CertUtil: -hashfile command FAILED: 0x800703ee (WIN32: 1006 ERROR_FILE_INVALID)" {
+		// Means the file is empty
+		return local hash "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+		exit
+	}
 	if "`stdout_content'" == "" | r(eof) == 1 {
 		// Handle like an error, the file should not end here
 		di as error "`stdout_content'"

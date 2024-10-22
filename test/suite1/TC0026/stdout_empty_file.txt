@@ -1,0 +1,2 @@
+CertUtil: -hashfile command FAILED: 0x800703ee (WIN32: 1006 ERROR_FILE_INVALID)
+CertUtil: The volume for a file has been externally altered so that the opened file is no longer valid.

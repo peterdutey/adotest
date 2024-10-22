@@ -12,6 +12,9 @@ test_assert _rc == 0, message("process_stderr does not raise error in presence o
 capture process_stderr using "test/suite1/TC0026/error-from-stderr.txt"
 test_assert _rc == 197, message("process_stderr otherwise raises error and prints stderr")
 
+capture process_stdout using "test/suite1/TC0026/stdout_empty_file.txt"
+test_assert _rc == 0, message("process_stderr does not raise error in presence of empty file")
+
 process_stdout using "test/suite1/TC0026/correct_hash.txt"
 test_assert "`r(hash)'" == "faeda27889bb95f3fb5eba84b5f2aa87bf0c604ea7fc2b88172cbb82e05cac7d", message("process_stdout returns correct hash")
 
@@ -37,7 +40,9 @@ gethash using "test/suite1/TC0026/error-from-stderr.txt"
 test_assert "`r(hash)'" == "faeda27889bb95f3fb5eba84b5f2aa87bf0c604ea7fc2b88172cbb82e05cac7d", message("gethash returns correct hash")
 
 capture gethash using test/suite1/TC0026/empty_file.txt
-test_assert _rc == 197, message("gethash raises error when file is empty")
+test_assert "`r(hash)'" == "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", message("gethash successfully returns hash when file is empty")
+
+
 
 * Clean up
 program drop _all
