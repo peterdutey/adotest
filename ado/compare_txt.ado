@@ -1,34 +1,25 @@
 program compare_txt, rclass
-syntax, file1(string) file2(string)
+    version 17
+    syntax, file1(string) file2(string)
 
     if (lower(c(os)) != "windows") {
         di as error "This program is only available for Windows"
         exit
     }
 
-    quietly which inshell
-    if _rc==111 {
-        di as error "inshell not found"
-        exit 111
-    }
-
-    capture quietly dir `file1'
+    capture confirm file "`file1'"
     if _rc!=0 {
-        di as error "file1 not found"
-        exit
+        confirm file "`file1'"
     }
-    capture quietly dir `file2'
+    capture confirm file "`file2'"
     if _rc!=0 {
-        di as error "file2 not found"
-        exit
+        confirm file "`file2'"
     }
-
-    inshell Certutil -hashfile `c(pwd)'/`file1' SHA256
-    local hash1 = "`r(no2)'"
-    inshell Certutil -hashfile `c(pwd)'/`file2' SHA256
-    local hash2 = "`r(no2)'"
-
-    return list
+    
+    gethash using "`file1'"
+    local hash1 = "`r(hash)'"
+    gethash using "`file2'"
+    local hash2 = "`r(hash)'"
 
     if "`hash1'" != "`hash2'" {
         di as error "Files are different"
