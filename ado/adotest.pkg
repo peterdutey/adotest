@@ -1,0 +1,14 @@
+v 3
+d adotest: Stata module for automated unit testing of ado commands and subcommands
+d Peter Dutey, University College London, p.dutey-magni@ucl.ac.uk
+d Distribution-Date: 20241022
+d Bugs/support: https://github.com/peterdutey/adotest/issues
+d:
+: :
+f get_hash.ado          Get the SHA256 hash value of a file (on MS Windows only)
+f test_assert.ado       Assert a condition
+f test_package.ado      Run all test cases in a directory
+f testcase.class        Test case class
+f testsuite.class       Test suite class 
+: : :
+e
