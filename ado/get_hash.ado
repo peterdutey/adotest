@@ -1,4 +1,4 @@
-program define gethash, rclass
+program define get_hash, rclass
 	version 17
 	syntax using/
 	// This function uses the MS Windows cmd.exe certutil command to get the SHA256 hash of a file.

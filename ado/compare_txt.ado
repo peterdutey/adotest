@@ -16,9 +16,9 @@ program compare_txt, rclass
         confirm file "`file2'"
     }
     
-    gethash using "`file1'"
+    get_hash using "`file1'"
     local hash1 = "`r(hash)'"
-    gethash using "`file2'"
+    get_hash using "`file2'"
     local hash2 = "`r(hash)'"
 
     if "`hash1'" != "`hash2'" {
