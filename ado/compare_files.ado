@@ -1,20 +1,15 @@
 program compare_files, rclass
     version 17
-    syntax, file1(string) file2(string)
+    syntax, file1(string) /// relative path of first file to compare 
+            file2(string) /// relative path of second file to compare
 
     if (lower(c(os)) != "windows") {
         di as error "This program is only available for Windows"
         exit
     }
-
-    capture confirm file "`file1'"
-    if _rc!=0 {
-        confirm file "`file1'"
-    }
-    capture confirm file "`file2'"
-    if _rc!=0 {
-        confirm file "`file2'"
-    }
+    
+    confirm file "`file1'"
+    confirm file "`file2'"
     
     get_hash using "`file1'"
     local hash1 = "`r(hash)'"

@@ -1,15 +1,14 @@
 program define get_hash, rclass
-	version 17
-	syntax using/
 	// This function uses the MS Windows cmd.exe certutil command to get the SHA256 hash of a file.
 	// The hash is returned as a string in r(hash).
 	// If no output is found the file instead reads from stderr and prints this into the console before returning an error.
-
-	// Repurposed from Matthew Bryant Hall, 2021. "INSHELL: Stata module to send commands to the 
+	// Inspired by Matthew Bryant Hall, 2021. "INSHELL: Stata module to send commands to the 
 	// shell as well as capture and print their standard output, standard error, and native shell return codes," 
 	// Statistical Software Components S459033, Boston College Department of Economics, revised 01 Jan 2023.
 	// <https://ideas.repec.org/c/boc/bocode/s459033.html> 
-  
+	version 17
+	syntax using/  /// path of text file containing expected console output
+	
 	// Using MS Windows
   	if (lower(c(os)) != "windows") {
 		display as error "This command is only implemented on MS Windows"
