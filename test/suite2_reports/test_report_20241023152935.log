@@ -25,11 +25,29 @@ TEST CASE 23: test_assert supports 'if' and 'in' inputs
 > PASS > 1=1 with in
 > PASS > 1<>2 with in
 ================================================================================
+FILE: test-0027.do    
+TEST CASE 27: Test test_console [part expected to fail]
+
+> Capturing console output for [describe]
+
+Contains data
+ Observations:             2                  
+    Variables:             0                  
+Sorted by: 
+     Note: Dataset has changed since last saved.
+Files are different
+> FAIL > The console output does not match test/suite1/TC0027/console_describe.txt
+  -- CONSOLE OUTPUT -----------------------------------------------
+  Please review output in test_console_2045316575581.log.
+  
+  -----------------------------------------------------------------
+================================================================================
 
 Testing complete.
 One or more tests failed.
 
     test_id                                   test_name   passed   failed   total            start_dttm              end_dttm  
-         14   Test reporting of failure by test_package        1        1       2   2024-10-22 17:28:47   2024-10-22 17:28:47  
-         23   test_assert supports 'if' and 'in' inputs        7        1       8   2024-10-22 17:28:47   2024-10-22 17:28:47  
-file test/suite2_reports/test_report_20241022172847.csv saved
+         14   Test reporting of failure by test_package        1        1       2   2024-10-23 15:29:35   2024-10-23 15:29:35  
+         23   test_assert supports 'if' and 'in' inputs        7        1       8   2024-10-23 15:29:35   2024-10-23 15:29:35  
+         27   Test test_console [part expected to fail]        0        1       1   2024-10-23 15:29:35   2024-10-23 15:29:38  
+file test/suite2_reports/test_report_20241023152935.csv saved

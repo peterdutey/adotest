@@ -17,10 +17,7 @@ program define get_hash, rclass
 	}
 
 	// File exists
-	capture confirm file "`using'"
-	if _rc != 0 {
-		error _rc
-	}
+	confirm file "`using'"
 
 	// Temporary files for stdout and stderr
 	tempfile stdout stderr 
