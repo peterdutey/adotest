@@ -1,6 +1,5 @@
-*! version 0.3.0 2024-05-30
 program define test_assert
-version 18
+version 17
 syntax anything [if] [in] [, message(string)] 
 	quietly classutil dir .thistest
 	if "`r(list)'" == "" {

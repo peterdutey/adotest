@@ -1,0 +1,3 @@
+SHA256 hash of test/suite1/TC0025/error-from-stderr.txt:
+faeda27889bb95f3fb5eba84b5f2aa87bf0c604ea7fc2b88172cbb82e05cac7d
+CertUtil: -hashfile command completed successfully.
