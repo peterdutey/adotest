@@ -42,7 +42,7 @@ else {
     .actualtest.fail
 }
 
-**# Step  TODO check the print test_assert 1+1 == 4, message("1+1=4") when the hash function is developed
+**# Step  TODO check the print test_assert 1+1 == 4, message("1+1=4") when the test_console function is developed
 
 .thistest = .actualtest
 classutil drop .actualtest

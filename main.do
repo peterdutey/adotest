@@ -1,5 +1,4 @@
 adopath + "./ado"
-
 clear all
 
 * Test successful test suite without reporting
@@ -14,3 +13,4 @@ test_package, test("test/suite2") out("test/suite2_reports")
 * Show memory content after test suites (must be clear)
 classutil dir
 describe
+log query _all
