@@ -1,5 +1,4 @@
 program define test_console
-// Validate console output of a command against a text file
 version 17
 syntax, exp(string)             /// an expression to execute
         console_file(string)    /// expected console output (without leading and trailing return carriages)

@@ -1,6 +1,5 @@
-*! version 0.3.0 2024-05-30
 program define test_package
-version 18
+version 17
 syntax, ///
   TESTdir(string)       ///
   [ OUTputdir(string) ] /// path where to store 
