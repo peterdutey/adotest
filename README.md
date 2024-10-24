@@ -11,4 +11,4 @@ To install the latest version directly from GitHub
 net install adotest, from("https://raw.githubusercontent.com/peterdutey/adotest/main/ado/")
 ```
 
-See [test-template.do](test/test-template.do) for an example test case and [suite1](./suite1) for an example test suite.
+See [test-template.do](test/test-template.do) for an example test case and [suite1](./test/suite1) for an example test suite.
