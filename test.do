@@ -14,3 +14,15 @@ test_package, test("test/suite2") out("test/suite2_reports")
 classutil dir
 describe
 log query _all
+
+* Verify the stata.toc
+net from "`c(pwd)'/ado"
+// web equivalent
+// net from "https://raw.githubusercontent.com/peterdutey/adotest/main/ado/"
+
+
+* Verify the pkg file
+net describe adotest, from("`c(pwd)'/ado")
+// web equivalent
+// net describe adotest, from("https://raw.githubusercontent.com/peterdutey/adotest/main/ado/")
+
