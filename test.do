@@ -32,3 +32,8 @@ net describe adotest, from("`c(pwd)'/ado")
 // web equivalent
 // net describe adotest, from("https://raw.githubusercontent.com/peterdutey/adotest/main/ado/")
 
+* Verify help files
+local helpfiles: dir "ado" files "*.sthlp"
+foreach helpfile of local helpfiles {
+    view "ado/`helpfile'"
+}
