@@ -1,4 +1,4 @@
-noisily .thistest = .testcase.new, ///
+.thistest = .testcase.new, ///
   id("18") ///
   name("Verify compare_files detects differences")
  

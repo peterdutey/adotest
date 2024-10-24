@@ -1,4 +1,4 @@
-noisily .thistest = .testcase.new, ///
+.thistest = .testcase.new, ///
   id("14") ///
   name("Test reporting of failure by test_package")
 

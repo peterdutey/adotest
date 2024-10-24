@@ -1,4 +1,4 @@
-noisily .thistest = .testcase.new, ///
+.thistest = .testcase.new, ///
   id("8") ///
   name(".testcase class instances are created and can be updated")
 

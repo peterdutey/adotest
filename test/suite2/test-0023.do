@@ -1,4 +1,4 @@
-noisily .thistest = .testcase.new, ///
+.thistest = .testcase.new, ///
   id("23") ///
   name("test_assert supports 'if' and 'in' inputs")
 

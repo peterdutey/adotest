@@ -1,7 +1,7 @@
 program define test_console
 version 17
-syntax, exp(string)             /// an expression to execute
-        console_file(string)    /// expected console output (without leading and trailing return carriages)
+syntax using/,            /// expected console output (without leading and trailing return carriages)
+       exp(string)        /// an expression to execute
 	
     quietly classutil dir .thistest
 	if "`r(list)'" == "" {
@@ -9,21 +9,21 @@ syntax, exp(string)             /// an expression to execute
 		exit 111
 	}
 
-    confirm file "`console_file'"
+    confirm file "`using'"
     local observed_log = "test_console_`=now()'.log"
 
     noisily display as input "> Capturing console output for [`exp']"
     log_something using `observed_log', exp("`exp'")
     
-    compare_files, file1("`observed_log'") file2("`console_file'")
+    compare_files, file1("`observed_log'") file2("`using'")
     if `r(identity)' == 1 {
-		noisily display as input "> PASS > The console output matches `console_file'"
+		noisily display as input "> PASS > The console output matches `using'"
 		.thistest.pass
         erase `observed_log'
 	}
 	if `r(identity)' == 0  {
 		.thistest.fail
-		noisily display as error "> FAIL > The console output does not match `console_file'"
+		noisily display as error "> FAIL > The console output does not match `using'"
 		noisily display as error _col(3) "-- CONSOLE OUTPUT " _dup(47) "-"
         display as error _col(3) "Please review output in `observed_log'."
 		noisily display as error _col(3) ""

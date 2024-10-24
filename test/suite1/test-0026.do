@@ -1,4 +1,4 @@
-noisily .thistest = .testcase.new, ///
+.thistest = .testcase.new, ///
   id("26") ///
   name("Test get_hash")
 

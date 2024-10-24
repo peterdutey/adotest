@@ -38,7 +38,7 @@ Sorted by:
 Files are different
 > FAIL > The console output does not match test/suite1/TC0027/console_describe.txt
   -- CONSOLE OUTPUT -----------------------------------------------
-  Please review output in test_console_2045317842614.log.
+  Please review output in test_console_2045389890371.log.
   
   -----------------------------------------------------------------
 ================================================================================
@@ -47,7 +47,7 @@ Testing complete.
 One or more tests failed.
 
     test_id                                   test_name   passed   failed   total            start_dttm              end_dttm  
-         14   Test reporting of failure by test_package        1        1       2   2024-10-23 15:50:42   2024-10-23 15:50:42  
-         23   test_assert supports 'if' and 'in' inputs        7        1       8   2024-10-23 15:50:42   2024-10-23 15:50:42  
-         27   Test test_console [part expected to fail]        0        1       1   2024-10-23 15:50:42   2024-10-23 15:50:45  
-file test/suite2_reports/test_report_20241023155042.csv saved
+         14   Test reporting of failure by test_package        1        1       2   2024-10-24 11:51:30   2024-10-24 11:51:30  
+         23   test_assert supports 'if' and 'in' inputs        7        1       8   2024-10-24 11:51:30   2024-10-24 11:51:30  
+         27   Test test_console [part expected to fail]        0        1       1   2024-10-24 11:51:30   2024-10-24 11:51:35  
+file test/suite2_reports/test_report_20241024115130.csv saved
