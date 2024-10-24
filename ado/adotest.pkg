@@ -1,8 +1,8 @@
 v 1
 d adotest: Stata module for automated unit testing of ado commands and subcommands
 d Peter Dutey, University College London, p.dutey-magni@ucl.ac.uk
-d Distribution-Date: 20241023
-d Version: 0.3.0
+d Distribution-Date: 20241024
+d Version: 0.4.0
 d Bugs/support: https://github.com/peterdutey/adotest/issues
 f compare_files.ado
 f get_hash.ado
