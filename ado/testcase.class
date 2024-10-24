@@ -20,9 +20,7 @@ program .new
     .passed = 0
     .failed = 0
     .start_dttm = strofreal(now(), "`.timeformatter'")
-    if c(noisily) {
-        display as input "TEST CASE `id': `name'" _newline
-    }
+    noisily display as input "TEST CASE `id': `name'" _newline
 end
 
 * Method to increment pass counter

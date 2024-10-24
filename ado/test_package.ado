@@ -1,8 +1,7 @@
 program define test_package
 version 17
-syntax, ///
-  TESTdir(string)       ///
-  [ OUTputdir(string) ] /// path where to store 
+syntax using/,                   /// path where unit test do files are stored 
+       [ OUTputdir(string) ]     /// path where to store 
 
 	// Create a class to hold the test results
 	.tcresults = .testsuite.new
@@ -13,17 +12,18 @@ syntax, ///
 		quietly log using "`outputdir'/test_report_`dttm'.log", text name(test_package_log)
 	}
 
-	local tfiles: dir "`testdir'" files "test-*.do", respectcase
+	local tfiles: dir "`using'" files "test-*.do", respectcase
 	local i = 0
-	noisily display as input "Beginning testing in `testdir'."
+	noisily display as input "Beginning testing in `using'."
 	
 	display as input _newline _dup(80) "="
 	foreach tf of local tfiles {
 		local i = `i' + 1
 		display as input "FILE: `tf'    " 
-		run "`testdir'/`tf'"
+		run "`using'/`tf'"
 		.thistest.end
 		clear
+		clear programs
 		clear mata 
 		clear results
 		clear matrix

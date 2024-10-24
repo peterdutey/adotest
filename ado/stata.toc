@@ -1,0 +1,3 @@
+v 1
+d GitHub repository peterdutey/adotest
+p adotest Stata module for automated unit testing of ado commands and subcommands

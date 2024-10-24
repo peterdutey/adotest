@@ -1,4 +1,4 @@
-noisily .actualtest = .testcase.new, ///
+.actualtest = .testcase.new, ///
   id("9") ///
   name("Check test_assert function")
 
