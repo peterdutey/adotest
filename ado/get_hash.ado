@@ -15,24 +15,30 @@ program define get_hash, rclass
 		error 111
 	}
 
+    quietly classutil dir .thistest
+	if "`r(list)'" == "" {
+		noisily display as error "The object .thistest is not found. Please make sure it is created before running test_console"
+		exit 111
+	}
+
 	// File exists
 	confirm file "`using'"
 
-	// Temporary files for stdout and stderr
+	// Erase temp files for stdout and stderr
 	tempfile stdout stderr 
 
-	// Create temporary bat file and pass this to the shell
-	tempname batn
-	local batfilename = "batfile`batf'.bat"	
-	capture file close `batn' 
-	quietly file open `batn' using "`batfilename'", write text replace
-	quietly file write `batn' `"certutil -hashfile "`using'" SHA256 1> "`stdout'" 2> "`stderr'""' _n
-	file close `batn'
+	// Create temporary batch file and pass this to the shell
+	local prefix = "TC`.thistest.id'_`=strofreal(now(), "%tcCCYYNNDD")'_`=strofreal(now(), "%tcHHMMSS")'"
+	local batfilename = "batfile`prefix'.bat"	
+	capture file close `prefix' 
+	quietly file open `prefix' using "`batfilename'", write text replace
+	quietly file write `prefix' `"certutil -hashfile "`using'" SHA256 1> "`stdout'" 2> "`stderr'""' _n
+	file close `prefix'
 	quietly shell "`batfilename'"
 	quietly erase "`batfilename'"
 	
-	process_stderr using `stderr'
-	process_stdout using `stdout'
+	process_stderr using "`stderr'"
+	process_stdout using "`stdout'"
 
 	return local hash "`r(hash)'"
 end

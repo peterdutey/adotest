@@ -9,7 +9,7 @@ capture compare_files, file1("test/suite1/TC0018/onefile.txt") file2("file2doesn
 test_assert _rc == 601, message("file2 doesn't exist, expect return code 601")
 
 compare_files, file1("test/suite1/TC0018/onefile.txt") file2("test/suite1/TC0018/onefilecopy.txt")
-test_assert `r(identity)' == 1, message("Two identifical files should return 1")
+test_assert `r(identity)' == 1, message("Two identical files should return 1")
 
 compare_files, file1("test/suite1/TC0018/onefile.txt") file2("test/suite1/TC0018/anotherfile.txt")
 test_assert `r(identity)' == 0, message("Two different files should return 0")

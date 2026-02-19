@@ -6,7 +6,7 @@ syntax using/,                   /// path where unit test do files are stored
 	// Create a class to hold the test results
 	.tcresults = .testsuite.new
 
-	local dttm = strofreal(now(), "%tcCCYYNNDDHHMMSS")
+	local dttm = "`=strofreal(now(), "%tcCCYYNNDD")'_`=strofreal(now(), "%tcHHMMSS")'"
 
 	if "`outputdir'" != "" {
 		quietly log using "`outputdir'/test_report_`dttm'.log", text name(test_package_log)

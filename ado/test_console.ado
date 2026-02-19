@@ -10,7 +10,7 @@ syntax using/,            /// expected console output (without leading and trail
 	}
 
     confirm file "`using'"
-    local observed_log = "test_console_`=now()'.log"
+    local observed_log = "test_console_TC`.thistest.id'_`=strofreal(now(), "%tcCCYYNNDD")'_`=strofreal(now(), "%tcHHMMSS")'.log"
 
     noisily display as input "> Capturing console output for [`exp']"
     log_something using `observed_log', exp("`exp'")
