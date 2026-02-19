@@ -29,7 +29,7 @@ program define get_hash, rclass
 
 	// Create temporary batch file and pass this to the shell
 	local prefix = "TC`.thistest.id'_`=strofreal(now(), "%tcCCYYNNDD")'_`=strofreal(now(), "%tcHHMMSS")'"
-	local batfilename = "batfile`batf'.bat"	
+	local batfilename = "batfile`prefix'.bat"	
 	capture file close `prefix' 
 	quietly file open `prefix' using "`batfilename'", write text replace
 	quietly file write `prefix' `"certutil -hashfile "`using'" SHA256 1> "`stdout'" 2> "`stderr'""' _n
