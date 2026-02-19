@@ -1,12 +1,12 @@
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
       name:  adotest_alltests
        log:  C:\Users\sejjpfd\AppData\Local\0_Code\adotest\test.log
   log type:  text
- opened on:  24 Oct 2024, 11:49:40
+ opened on:  19 Feb 2026, 10:07:22
 
 . adopath + "./ado"
-  [1]  (BASE)      "C:\Program Files\Stata18\ado\base/"
-  [2]  (SITE)      "C:\Program Files\Stata18\ado\site/"
+  [1]  (BASE)      "C:\Program Files\StataNow19\ado\base/"
+  [2]  (SITE)      "C:\Program Files\StataNow19\ado\site/"
   [3]              "."
   [4]  (PERSONAL)  "C:\Users\sejjpfd\ado\personal/"
   [5]  (PLUS)      "C:\Users\sejjpfd\ado\plus/"
@@ -49,7 +49,7 @@ TEST CASE 18: Verify compare_files detects differences
 
 > PASS > file1 doesn't exist, expect return code 601
 > PASS > file2 doesn't exist, expect return code 601
-> PASS > Two identifical files should return 1
+> PASS > Two identical files should return 1
 Files are different
 > PASS > Two different files should return 0
 Files are different
@@ -146,11 +146,11 @@ Age group |
 Testing complete.
 
     test_id                                                  test_name   passed   failed   total            start_dttm              end_dttm  
-          8   .testcase class instances are created and can be updated        9        0       9   2024-10-24 11:49:40   2024-10-24 11:49:40  
-          9                                 Check test_assert function        2        0       2   2024-10-24 11:49:40   2024-10-24 11:49:40  
-         18                   Verify compare_files detects differences        5        0       5   2024-10-24 11:49:40   2024-10-24 11:49:53  
-         26                                              Test get_hash       12        0      12   2024-10-24 11:49:53   2024-10-24 11:49:59  
-         27                                          Test test_console        9        0       9   2024-10-24 11:49:59   2024-10-24 11:50:36  
+          8   .testcase class instances are created and can be updated        9        0       9   2026-02-19 10:07:22   2026-02-19 10:07:22  
+          9                                 Check test_assert function        2        0       2   2026-02-19 10:07:22   2026-02-19 10:07:22  
+         18                   Verify compare_files detects differences        5        0       5   2026-02-19 10:07:22   2026-02-19 10:07:57  
+         26                                              Test get_hash       12        0      12   2026-02-19 10:07:57   2026-02-19 10:08:09  
+         27                                          Test test_console        9        0       9   2026-02-19 10:08:09   2026-02-19 10:09:19  
 
 . 
 . * Test successful test suite with reporting
@@ -186,7 +186,7 @@ TEST CASE 18: Verify compare_files detects differences
 
 > PASS > file1 doesn't exist, expect return code 601
 > PASS > file2 doesn't exist, expect return code 601
-> PASS > Two identifical files should return 1
+> PASS > Two identical files should return 1
 Files are different
 > PASS > Two different files should return 0
 Files are different
@@ -283,12 +283,12 @@ Age group |
 Testing complete.
 
     test_id                                                  test_name   passed   failed   total            start_dttm              end_dttm  
-          8   .testcase class instances are created and can be updated        9        0       9   2024-10-24 11:50:37   2024-10-24 11:50:37  
-          9                                 Check test_assert function        2        0       2   2024-10-24 11:50:37   2024-10-24 11:50:37  
-         18                   Verify compare_files detects differences        5        0       5   2024-10-24 11:50:37   2024-10-24 11:50:51  
-         26                                              Test get_hash       12        0      12   2024-10-24 11:50:51   2024-10-24 11:50:56  
-         27                                          Test test_console        9        0       9   2024-10-24 11:50:56   2024-10-24 11:51:30  
-file test/suite1_reports/test_report_20241024115037.csv saved
+          8   .testcase class instances are created and can be updated        9        0       9   2026-02-19 10:09:19   2026-02-19 10:09:19  
+          9                                 Check test_assert function        2        0       2   2026-02-19 10:09:19   2026-02-19 10:09:19  
+         18                   Verify compare_files detects differences        5        0       5   2026-02-19 10:09:19   2026-02-19 10:09:54  
+         26                                              Test get_hash       12        0      12   2026-02-19 10:09:54   2026-02-19 10:10:05  
+         27                                          Test test_console        9        0       9   2026-02-19 10:10:05   2026-02-19 10:11:16  
+file test/suite1_reports/test_report_20260219_100919.csv saved
 
 . 
 . * Test failing test suite with reporting
@@ -333,7 +333,7 @@ Sorted by:
 Files are different
 > FAIL > The console output does not match test/suite1/TC0027/console_describe.txt
   -- CONSOLE OUTPUT -----------------------------------------------
-  Please review output in test_console_2045389890371.log.
+  Please review output in test_console_TC27_20260219_101117.log.
   
   -----------------------------------------------------------------
 ================================================================================
@@ -342,10 +342,10 @@ Testing complete.
 One or more tests failed.
 
     test_id                                   test_name   passed   failed   total            start_dttm              end_dttm  
-         14   Test reporting of failure by test_package        1        1       2   2024-10-24 11:51:30   2024-10-24 11:51:30  
-         23   test_assert supports 'if' and 'in' inputs        7        1       8   2024-10-24 11:51:30   2024-10-24 11:51:30  
-         27   Test test_console [part expected to fail]        0        1       1   2024-10-24 11:51:30   2024-10-24 11:51:35  
-file test/suite2_reports/test_report_20241024115130.csv saved
+         14   Test reporting of failure by test_package        1        1       2   2026-02-19 10:11:17   2026-02-19 10:11:17  
+         23   test_assert supports 'if' and 'in' inputs        7        1       8   2026-02-19 10:11:17   2026-02-19 10:11:17  
+         27   Test test_console [part expected to fail]        0        1       1   2026-02-19 10:11:17   2026-02-19 10:11:28  
+file test/suite2_reports/test_report_20260219_101117.csv saved
 
 . 
 . * Show memory content after test suites (must be clear)
@@ -368,5 +368,5 @@ Sorted by:
       name:  adotest_alltests
        log:  C:\Users\sejjpfd\AppData\Local\0_Code\adotest\test.log
   log type:  text
- closed on:  24 Oct 2024, 11:51:35
+ closed on:  19 Feb 2026, 10:11:28
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
