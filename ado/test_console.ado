@@ -1,7 +1,7 @@
 program define test_console
 version 17
 syntax using/,            /// expected console output (without leading and trailing return carriages)
-       exp(string)        /// an expression to execute
+       exp(passthru)      /// an expression to execute WITHOUT QUOTES
 	
     quietly classutil dir .thistest
 	if "`r(list)'" == "" {
@@ -11,9 +11,11 @@ syntax using/,            /// expected console output (without leading and trail
 
     confirm file "`using'"
     local observed_log = "test_console_TC`.thistest.id'_`=strofreal(now(), "%tcCCYYNNDD")'_`=strofreal(now(), "%tcHHMMSS")'.log"
+	local exp = regexreplace(regexreplace(`"`exp'"', "^exp\(", ""), "\)$","")
 
-    noisily display as input "> Capturing console output for [`exp']"
-    log_something using `observed_log', exp("`exp'")
+
+    noisily display as input `"> Capturing console output for [`exp']"'
+    log_something using `observed_log', exp(`exp')
     
     compare_files, file1("`observed_log'") file2("`using'")
     if `r(identity)' == 1 {
@@ -33,8 +35,9 @@ end
 
 program define log_something
     version 17
-    syntax using, exp(string) 
-    di "`exp'" 
+    syntax using, exp(passthru) 
+	local exp = regexreplace(regexreplace(`"`exp'"', "^exp\(", ""), "\)$","")
+    di `"`exp'"'
     set linesize 255
     set output proc
     log `using', text nomsg name(test_console_log_handle)
