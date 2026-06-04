@@ -1,0 +1,6 @@
+test_id,test_name,passed,failed,total,start_dttm,end_dttm
+"8",".testcase class instances are created and can be updated",9,0,9,"2026-06-04 08:51:37","2026-06-04 08:51:37"
+"9","Check test_assert function",2,0,2,"2026-06-04 08:51:37","2026-06-04 08:51:37"
+"18","Verify compare_files detects differences",5,0,5,"2026-06-04 08:51:38","2026-06-04 08:51:56"
+"26","Test get_hash",12,0,12,"2026-06-04 08:51:56","2026-06-04 08:52:03"
+"27","Test test_console",10,0,10,"2026-06-04 08:52:03","2026-06-04 08:52:51"
